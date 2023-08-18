@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "poetry"
+version = "0.1.0"
+description = ""
+authors = ["andrew"]
+
+[tool.poetry.dependencies]
+python = "3.11.3"
+dvc = "^2.10.0"
+hydra-core = "^1.1.1"
+pdoc3 = "^0.10.0"
+kaleido = "0.2.1"
+pycaret = "3"
+pandas = "^1.5.3"
+numpy = "^1.24"
+sklearn = "^0.0.post7"
+matplotlib = "^3.7.2"
+jupyter = "^1.0.0"
+ipykernel = "^6.25.1"
+wtforms = "^3.0.1"
+flask = "^2.3.2"
+wtforms-components = "^0.10.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pre-commit = "^2.17.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+ignore = ["E501"]
+select = ["B","C","E","F","W","B9", "I", "Q"]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Same as Black.
+line-length = 88
+
+[tool.ruff.mccabe]
+max-complexity = 10

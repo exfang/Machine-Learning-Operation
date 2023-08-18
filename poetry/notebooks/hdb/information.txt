@@ -1,0 +1,14 @@
+# replace your read_csv with this codes
+from hydra import initialize, compose, utils
+from omegaconf import OmegaConf
+import pandas as pd
+import os
+
+current_directory = os.getcwd()
+
+with initialize(version_base=None, config_path="../../config/"):
+    cfg = compose(config_name='main.yaml')
+    print(f"Process data using {cfg.data.raw.hdb}")
+    csv_file_path = os.path.join(current_directory, "../../", cfg.data.raw.hdb)
+    df = pd.read_csv(csv_file_path)
+    print(df.head())

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='hdb.css') }}">{% endblock %}
+{% block title %}HDB Price Prediction{% endblock %}
+
+{% block content %}
+
+<div class='hdb'>
+    <div class="hdb_bg">
+    {% from "includes/form_helper.html" import render_field %}
+        <h1 class="display-5" style="text-align:center;">Predict HDB Price</h1>
+        {% print(pred) %}
+        <form method="POST" action="/hdbprediction">
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.town, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.postal_code, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.flat_type, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.flat_model, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.storey_range, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.floor_area_sqm, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.month, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.lease_commence_date, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.cbd_dist, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.min_dist_mrt, class="form-control") }}
+                </div>
+            </div>
+
+
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

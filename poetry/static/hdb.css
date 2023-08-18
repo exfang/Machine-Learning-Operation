@@ -1,0 +1,17 @@
+/* add your css code here */
+.hdb {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.hdb_bg{
+    background:#C5D8E9;
+    width:50%;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.col-md-6 {
+    padding: 0.4rem 0.3rem;
+}

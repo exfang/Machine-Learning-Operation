@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='medical.css') }}">{% endblock %}
+{% block title %}Cardiovascular Prediction{% endblock %}
+
+{% block content %}
+
+<div class='medical'>
+    <div class="medical_bg">
+    {% from "includes/form_helper.html" import render_field %}
+        <h1 class="display-5" style="text-align:center;">Predict Cardiovascular Likelihood</h1>
+        {% print(pred) %}
+        <form method="POST" action="/cvprediction">
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.age, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.gender, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.chest_pain, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.resting_BP, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.cholesterol, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.fasting_BS, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.resting_ECG, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.max_HR, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ render_field(form.exercise_angina, class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ render_field(form.old_peak, class="form-control") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ render_field(form.ST_slope, class="form-control") }}
+                </div>
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
