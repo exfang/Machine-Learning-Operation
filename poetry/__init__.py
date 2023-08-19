@@ -35,7 +35,7 @@ def run(config):
  'ST_slope']
 
 run()
-    
+
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
     cv_form = Medical(request.form)
