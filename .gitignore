@@ -1,0 +1,11 @@
+venv/pyvenv.cfg
+venv/
+.idea/.gitignore
+.idea/misc.xml
+.idea/mlop website.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+logs.log
+poetry/pythonFiles/__pycache__/forms.cpython-311.pyc

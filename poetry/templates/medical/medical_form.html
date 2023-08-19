@@ -8,6 +8,7 @@
 <div class='medical'>
     <div class="medical_bg">
     {% from "includes/form_helper.html" import render_field %}
+    <a href="/"><-- Back</a>
         <h1 class="display-5" style="text-align:center;">Predict Cardiovascular Likelihood</h1>
         {% print(pred) %}
         <form method="POST" action="/cvprediction">

@@ -2,16 +2,18 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    height: 100vh;
+    background-color: thistle;
 }
 
 .medical_bg{
     background:#C5D8E9;
     width:50%;
-    margin-top: 1.5rem;
+    margin: 1.5rem;
     border-radius: 1rem;
     padding: 2rem;
 }
 
 .col-md-6, .col-md-12 {
-    padding: 0.4rem 0.3rem;
+    padding: 0.4rem 0.5rem;
 }

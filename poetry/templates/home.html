@@ -1,2 +1,26 @@
-<a href="/cvprediction">Predict CV</a>
-<a href="/hdbprediction">Predict HDB</a>
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">{% endblock %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="home">
+    <div class="medical_side home_split">
+        <div class="contents">
+            <h2>Worried that you may have cardiovascular issues? <br><a href="/cvprediction">Free Assessment</a></h2>
+        </div>
+        <div>
+            <img class="image" src="static/images/cv.jpg" alt="Cardiovascular Background Image">
+        </div>
+    </div>
+    <div class="hdb_side home_split">        
+        <div class="contents hdb_background">
+            <h2>Interested in predicting <br>the price of a HDB flat? <br><a href="/hdbprediction">Predict Here</a></h2>
+        </div>
+        <div>
+            <img class="image" src="static/images/hdb.jpg" alt="HDB Background Image">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+.home {
+    display: flex;
+    height: 100vh;
+    padding: 15vh;
+    background-color: thistle;
+}
+
+.home_split {
+    width: 50%;
+    text-align: center;
+    padding: 5vh;
+}
+
+
+.image {
+    width: 80%;
+}
