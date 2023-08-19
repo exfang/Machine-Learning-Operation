@@ -16,7 +16,7 @@ app = Flask(__name__)
 # hdb = load_model('./model/test')
 # hdb_cols = ['town', 'postal_code', 'month', 'flat_type',
 #       'storey_range', 'floor_area_sqm', 'flat_model', 'lease_commence_date',
-#       'cbd_dist', 'min_dist_mrt' ]
+#       'cbd_dist', 'min_dist_mrt']
 
 
 @app.route('/')
@@ -28,11 +28,8 @@ def run(config):
     global rf_model
     global rf_cols
     current_path = utils.get_original_cwd() + "/"
-    print(current_path+config.model.medical)
     rf_model = load_model(current_path+config.model.medical)
-    print(rf_model)
-    rf_cols = ['age', 'chest_pain', 'resting_BP', 'cholesterol', 'max_HR', 'old_peak',
- 'ST_slope']
+    rf_cols = config.prediction.medical_column
 
 run()
     
@@ -45,7 +42,6 @@ def cv():
         print(final)
         
         data_unseen = pd.DataFrame([final], columns=rf_cols)
-        # transform the data to the right format
         prediction = predict_model(rf_model, data=data_unseen, round=0)
         output_text = ""
         if int(prediction.prediction_label) == 0:
@@ -53,7 +49,6 @@ def cv():
         else:
             output_text = f"You are predicted to have cardiovascular disease with a confidence of {int(prediction.prediction_score*100)}%"
         return render_template("medical/medical_form.html", pred=output_text, form=cv_form)
-        # return render_template("medical/medical_form.html", form=cv_form)
 
     return render_template('medical/medical_form.html', form=cv_form)
 

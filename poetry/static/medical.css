@@ -34,3 +34,10 @@
 .col-md-4{
     margin-bottom: 1rem;
 }
+
+.result {
+    background-color: rgb(175, 217, 236);
+    margin-top: 3vh;
+    padding: 1rem;
+    border-radius: 1rem;
+}

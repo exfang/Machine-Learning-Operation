@@ -10,7 +10,7 @@
     {% from "includes/form_helper.html" import render_field %}
     <a href="/" class="button-back">Back to Home</a>
         <h1 class="display-5" style="text-align:center; margin-bottom:5vh; margin-top:3vh;">Predict Cardiovascular Likelihood</h1>
-        {% print(pred) %}
+        
         <form method="POST" action="/cvprediction">
             <div class="row">
                 <div class="col-md-4">
@@ -40,6 +40,10 @@
                     <input type="submit" value="Submit" class="btn btn-primary" style="margin-top:3vh; width:100%;"/>
                 </div>
                 
+            </div>
+            <div class="result">
+                <h3>Results:</h3>
+                {% print(pred) %}
             </div>
         </form>
     </div>
