@@ -32,7 +32,7 @@ def run(config):
     rf_cols = config.prediction.medical_column
 
 run()
-    
+
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
     cv_form = Medical(request.form)
