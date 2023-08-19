@@ -4,15 +4,13 @@ from pycaret.classification import *
 from pycaret.regression import *
 import numpy as np
 import pandas as pd
+import hydra
+from hydra import utils
+from omegaconf import DictConfig
+
 
 app = Flask(__name__)
 
-# rf_model = load_model('models/rf_model')
-# rf_cols = [
-#     "age", "gender", "chest_pain", "resting_BP", "cholesterol",
-#     "fasting_BS", "resting_ECG", "max_HR", "exercise_angina",
-#     "old_peak", "ST_slope"
-# ]
 
 # Add your model code here
 # hdb = load_model('./model/test')
@@ -25,19 +23,37 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@hydra.main(config_path="config", config_name="main")
+def run(config):
+    global rf_model
+    global rf_cols
+    current_path = utils.get_original_cwd() + "/"
+    print(current_path+config.model.medical)
+    rf_model = load_model(current_path+config.model.medical)
+    print(rf_model)
+    rf_cols = ['age', 'chest_pain', 'resting_BP', 'cholesterol', 'max_HR', 'old_peak',
+ 'ST_slope']
 
+run()
+    
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
     cv_form = Medical(request.form)
-    # if request.method == 'POST' and cv_form.validate():
-    #     list_features = [x for x in request.form.values()]
-    #     final = np.array(list_features)
-    #     data_unseen = pd.DataFrame([final], columns=rf_cols)
-    #     # transform the data to the right format
-    #
-    #     prediction = predict_model(rf_model, data=data_unseen, round=0)
-    #     prediction = int(prediction.Label[0])
-    #     return render_template("medical/medical_form.html", pred="Expected bill will be {}".format(prediction))
+    if request.method == 'POST' and cv_form.validate():
+        list_features = [x for x in request.form.values()]
+        final = np.array(list_features)
+        print(final)
+        
+        data_unseen = pd.DataFrame([final], columns=rf_cols)
+        # transform the data to the right format
+        prediction = predict_model(rf_model, data=data_unseen, round=0)
+        output_text = ""
+        if int(prediction.prediction_label) == 0:
+            output_text = f"You are predicted to not have cardiovascular disease with a confidence of {int(prediction.prediction_score*100)}%"
+        else:
+            output_text = f"You are predicted to have cardiovascular disease with a confidence of {int(prediction.prediction_score*100)}%"
+        return render_template("medical/medical_form.html", pred=output_text, form=cv_form)
+        # return render_template("medical/medical_form.html", form=cv_form)
 
     return render_template('medical/medical_form.html', form=cv_form)
 

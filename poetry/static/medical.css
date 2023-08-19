@@ -3,17 +3,34 @@
     justify-content: center;
     margin: auto;
     height: 100vh;
-    background-color: thistle;
+    background-color: rgb(175, 217, 236);
+}
+
+.button-back {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 2vh;
+    transition: 0.5s;
+}
+
+.button-back:hover {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    transition: 0.5s;
 }
 
 .medical_bg{
-    background:#C5D8E9;
+    background:#98c1e6;
     width:50%;
     margin: 1.5rem;
     border-radius: 1rem;
     padding: 2rem;
 }
 
-.col-md-6, .col-md-12 {
-    padding: 0.4rem 0.5rem;
+.col-md-4{
+    margin-bottom: 1rem;
 }

@@ -5,7 +5,7 @@ description = ""
 authors = ["andrew"]
 
 [tool.poetry.dependencies]
-python = "3.11.3"
+python = ">=3.8.2,<3.12"
 dvc = "^2.10.0"
 hydra-core = "^1.1.1"
 pdoc3 = "^0.10.0"
@@ -20,6 +20,8 @@ ipykernel = "^6.25.1"
 wtforms = "^3.0.1"
 flask = "^2.3.2"
 wtforms-components = "^0.10.5"
+mlflow = "^2.6.0"
+scikit-learn = "1.2.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
