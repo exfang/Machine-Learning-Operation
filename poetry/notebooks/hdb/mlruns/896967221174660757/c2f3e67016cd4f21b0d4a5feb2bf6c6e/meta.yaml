@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/c2f3e67016cd4f21b0d4a5feb2bf6c6e/artifacts
+end_time: 1692467028118
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: c2f3e67016cd4f21b0d4a5feb2bf6c6e
+run_name: Huber Regressor
+run_uuid: c2f3e67016cd4f21b0d4a5feb2bf6c6e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692467027072
+status: 3
+tags: []
+user_id: Akira

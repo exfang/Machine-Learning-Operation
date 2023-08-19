@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/e6c6fa3607ba44aa9884a1f2b499bbb9/artifacts
+end_time: 1692471842534
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: e6c6fa3607ba44aa9884a1f2b499bbb9
+run_name: Bayesian Ridge
+run_uuid: e6c6fa3607ba44aa9884a1f2b499bbb9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692471841401
+status: 3
+tags: []
+user_id: Akira

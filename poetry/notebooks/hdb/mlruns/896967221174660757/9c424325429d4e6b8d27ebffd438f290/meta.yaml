@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/9c424325429d4e6b8d27ebffd438f290/artifacts
+end_time: 1692469947119
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: 9c424325429d4e6b8d27ebffd438f290
+run_name: K Neighbors Regressor
+run_uuid: 9c424325429d4e6b8d27ebffd438f290
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692469945579
+status: 3
+tags: []
+user_id: Akira

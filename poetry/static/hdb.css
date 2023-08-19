@@ -3,15 +3,35 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    background: rgb(175, 217, 236);
+    height:100vh;
 }
 
 .hdb_bg{
     background:#C5D8E9;
-    width:50%;
+    width:60%;
+    height:45vh;
     margin-top: 1.5rem;
     border-radius: 1rem;
     padding: 2rem;
 }
+.col-md-4 {
+    padding: 0.4rem 0.6rem;
+}
 .col-md-6 {
-    padding: 0.4rem 0.3rem;
+    padding: 0.4rem 0.6rem;
+}
+.result {
+    background-color: rgb(175, 217, 236);
+    margin-top: 3vh;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.btn {
+    margin-top:2rem;
+
+}
+.result{
+    margin-top:2rem;
+    font-size: 30px;
 }

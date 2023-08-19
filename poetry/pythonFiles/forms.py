@@ -43,8 +43,9 @@ class Price(Form):
                                               ('TOA PAYOH', 'TOA PAYOH'),
                                               ('WOODLANDS', 'WOODLANDS'),
                                               ('YISHUN', 'YISHUN')],  validators=[validators.DataRequired()])     
-    postal_code =  IntegerField('Postal Code', [validators.NumberRange(min=6, max=6), validators.DataRequired()])        
-    month = DateField('Date of purchase', format = '%Y-%m',  validators=[validators.DataRequired()])           
+    postal_code =  IntegerField('Postal Code', [validators.NumberRange(min=0, max=999999), validators.DataRequired()])        
+    month = IntegerField('Month of purchase',  [validators.NumberRange(min=1, max=12), validators.DataRequired()])       
+    year = IntegerField('Year of purchase',  [validators.NumberRange(min=1900, max=2030), validators.DataRequired()])     
     flat_type = SelectField('Flat Type', choices=[('1 ROOM', '1 ROOM'), 
                                                   ('2 ROOM', '2 ROOM'), 
                                                   ('3 ROOM', '3 ROOM'), 
@@ -94,6 +95,6 @@ class Price(Form):
                                                    ('2-room', '2-room'),
                                                    ('3Gen', '3Gen')], 
                                                    validators=[validators.DataRequired()])            
-    lease_commence_date = DateField('Lease Date', format='%Y', validators=[validators.DataRequired()])      
+    lease_commence_date = IntegerField('Lease Year',  [validators.NumberRange(min=1900, max=2030), validators.DataRequired()])     
     cbd_dist = DecimalField('Distance to nearest business district', [validators.NumberRange(min=0), validators.DataRequired()])               
     min_dist_mrt = DecimalField('Distance to nearest MRT', [validators.NumberRange(min=0), validators.DataRequired()])  

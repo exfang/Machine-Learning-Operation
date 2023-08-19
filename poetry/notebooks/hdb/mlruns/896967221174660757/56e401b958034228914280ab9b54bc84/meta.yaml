@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/56e401b958034228914280ab9b54bc84/artifacts
+end_time: 1692467020233
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: 56e401b958034228914280ab9b54bc84
+run_name: Linear Regression
+run_uuid: 56e401b958034228914280ab9b54bc84
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692467019205
+status: 3
+tags: []
+user_id: Akira

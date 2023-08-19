@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/65f5289f0a454b798fbc185ce321978b/artifacts
+end_time: 1692467311519
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: 65f5289f0a454b798fbc185ce321978b
+run_name: Gradient Boosting Regressor
+run_uuid: 65f5289f0a454b798fbc185ce321978b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692467310456
+status: 3
+tags: []
+user_id: Akira

@@ -12,11 +12,6 @@ from omegaconf import DictConfig
 app = Flask(__name__)
 
 
-# Add your model code here
-# hdb = load_model('./model/test')
-# hdb_cols = ['town', 'postal_code', 'month', 'flat_type',
-#       'storey_range', 'floor_area_sqm', 'flat_model', 'lease_commence_date',
-#       'cbd_dist', 'min_dist_mrt']
 
 
 @app.route('/')
@@ -27,9 +22,14 @@ def home():
 def run(config):
     global rf_model
     global rf_cols
+    global hdb_model
+    global hdb_cols
     current_path = utils.get_original_cwd() + "/"
     rf_model = load_model(current_path+config.model.medical)
     rf_cols = config.prediction.medical_column
+    hdb_model = load_model(current_path+config.model.hdb)
+    hdb_cols = config.prediction.hdb_column
+
 
 run()
 
@@ -56,15 +56,17 @@ def cv():
 @app.route('/hdbprediction', methods=['GET', 'POST'])
 def price():
     price_form = Price(request.form)
-    # if request.method == 'POST' and price_form.validate():
-    #     list_features = [x for x in request.form.values()]
-    #     final = np.array(list_features)
-    #     data_unseen = pd.DataFrame([final], columns=hdb_cols)
-    #     # transform the data to the right format
-    
-    #     prediction = predict_model(hdb, data=data_unseen, round=0)
-    #     prediction = int(prediction.prediction_label[0])
-    #     return render_template('hdb/hdb.html', pred="Expected price will be {}".format(prediction))
+    if request.method == 'POST' and price_form.validate():
+        list_features = [x for x in request.form.values()]
+        final = np.array(list_features)
+        print(final)
+        
+        data_unseen = pd.DataFrame([final], columns=hdb_cols)
+        prediction = predict_model(hdb_model, data=data_unseen, round=0)
+        output_text = ""
+        output_text = f"The predicted price of your flat is ${int(prediction.prediction_label)}"
+        return render_template("hdb/hdb.html", pred=output_text, form=price_form)
+
     return render_template('hdb/hdb.html', form=price_form)
 
 

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/a41db0617af64e64b8dc0e69910d128f/artifacts
+end_time: 1692471850049
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: a41db0617af64e64b8dc0e69910d128f
+run_name: Dummy Regressor
+run_uuid: a41db0617af64e64b8dc0e69910d128f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692471848885
+status: 3
+tags: []
+user_id: Akira

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Akira/Documents/GitHub/mloperation/poetry/notebooks/hdb/mlruns/896967221174660757/925718ba9bf34f80b587158d369342d1/artifacts
+end_time: 1692469955944
+entry_point_name: ''
+experiment_id: '896967221174660757'
+lifecycle_stage: active
+run_id: 925718ba9bf34f80b587158d369342d1
+run_name: Elastic Net
+run_uuid: 925718ba9bf34f80b587158d369342d1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692469954486
+status: 3
+tags: []
+user_id: Akira
