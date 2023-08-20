@@ -209,7 +209,7 @@ traitlets==5.9.0
 trove-classifiers==2023.8.7
 typing_extensions==4.7.1
 tzdata==2023.3
-urllib3==2.0.4
+urllib3==1.26.0
 vine==5.0.0
 virtualenv==20.24.3
 voluptuous==0.13.1
