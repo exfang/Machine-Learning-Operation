@@ -3,7 +3,7 @@ logs.log
 poetry/pythonFiles/__pycache__/forms.cpython-311.pyc
 poetry/__init__.log
 __init__.log
-poetry/data/
+# poetry/data/
 poetry/config/model/
 poetry/notebooks/medical/mlruns/
 poetry/notebooks/hdb/mlruns/

@@ -1,5 +1,4 @@
 import wtforms
-import wtforms_components
 from wtforms import Form, StringField, PasswordField, validators, EmailField, DateField, IntegerField, DecimalField, SelectField, DateTimeField
 
 class Medical(Form):
