@@ -17,7 +17,7 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@hydra.main(config_path="config", config_name="main")
+@hydra.main(config_path="poetry/config", config_name="main")
 def run(config):
     global rf_model
     global rf_cols
