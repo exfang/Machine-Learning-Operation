@@ -202,6 +202,7 @@ pygtrie==2.5.0
 PyJWT==2.8.0
 pyod==1.1.0
 pyparsing==3.0.9
+pypiwin32==223
 pyproject_hooks==1.0.0
 pytest==6.2.5
 python-dateutil==2.8.2

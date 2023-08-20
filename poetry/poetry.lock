@@ -4444,6 +4444,20 @@ files = [
 diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
+name = "pypiwin32"
+version = "223"
+description = ""
+optional = false
+python-versions = "*"
+files = [
+    {file = "pypiwin32-223-py3-none-any.whl", hash = "sha256:67adf399debc1d5d14dffc1ab5acacb800da569754fafdc576b2a039485aa775"},
+    {file = "pypiwin32-223.tar.gz", hash = "sha256:71be40c1fbd28594214ecaecb58e7aa8b708eabfa0125c8a109ebd51edbd776a"},
+]
+
+[package.dependencies]
+pywin32 = ">=223"
+
+[[package]]
 name = "pytest"
 version = "6.2.5"
 description = "pytest: simple powerful testing with Python"
@@ -6273,4 +6287,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.2,<3.12"
-content-hash = "ead3cfd38fc7fc7b6d2eecebfa986b4609d5c21529ae141b42ce4c7a889d9836"
+content-hash = "de0982aed219c81bdcdea95ec0c0733a615821778c669109a89dfab7a7ee8449"
