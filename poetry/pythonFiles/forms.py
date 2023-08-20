@@ -6,13 +6,13 @@ class Medical(Form):
     age = IntegerField('Age', [validators.NumberRange(min=1, max=130), validators.DataRequired()])
     # gender = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female')], validators=[validators.DataRequired()])
     chest_pain = SelectField('Chest Pain', choices=[('TA', 'Typical Angina'), ('ATA', 'Atypical Angina'), ('NAP', 'Non-Anginal Pain'), ('ASY', 'Asymptomatic')], validators=[validators.DataRequired()])
-    resting_BP = DecimalField('Resting Blood Pressure', [validators.NumberRange(min=0), validators.DataRequired()])
-    cholesterol = DecimalField('Serum Cholesterol', [validators.NumberRange(min=0), validators.DataRequired()])
+    resting_BP = DecimalField('Resting Blood Pressure', [validators.NumberRange(min=30), validators.DataRequired()])
+    cholesterol = DecimalField('Cholesterol', [validators.NumberRange(min=30), validators.DataRequired()])
     # fasting_BS = DecimalField('Fasting Blood Sugar', [validators.NumberRange(min=0), validators.DataRequired()])
     # resting_ECG = SelectField('Resting ECG', choices=[('Normal', 'Normal'), ('ST', 'ST-T wave abnormality'), ('LVH', 'Probable or definite LVH')], validators=[validators.DataRequired()])
     max_HR = IntegerField('Max Heart Rate', [validators.NumberRange(min=60, max=202), validators.DataRequired()])
     # exercise_angina = SelectField('Exercise-Induced Angina', choices=[('Y', 'Yes'), ('N', 'No')], validators=[validators.DataRequired()])
-    old_peak = DecimalField('Old Peak', [validators.NumberRange(min=0), validators.DataRequired()])
+    old_peak = DecimalField('Old Peak', [validators.NumberRange(min=-10, max=10), validators.DataRequired()])
     ST_slope = SelectField('ST Slope', choices=[('Up', 'Upsloping'), ('Flat', 'Flat'), ('Down', 'Downsloping')], validators=[validators.DataRequired()])
 
 

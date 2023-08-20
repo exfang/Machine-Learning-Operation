@@ -7,6 +7,7 @@
 }
 
 .button-back {
+    margin: 2rem;
     border: 1px solid black;
     border-radius: 4px;
     padding: 4px;
@@ -38,6 +39,6 @@
 .result {
     background-color: rgb(175, 217, 236);
     margin-top: 3vh;
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 1rem;
 }

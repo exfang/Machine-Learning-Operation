@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='hdb.css') }}">{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='medical.css') }}">{% endblock %}
 {% block title %}HDB Price Prediction{% endblock %}
 
 {% block content %}
 
-<div class='hdb'>
-    <div class="hdb_bg">
-        <a href="/"><-- Back</a>
+<div class='medical'>
+    <div class="medical_bg">
     {% from "includes/form_helper.html" import render_field %}
-        <h1 class="display-5" style="text-align:center;">Predict HDB Price</h1>
+    <a href="/" class="button-back">Back to Home</a>
+        <h1 class="display-5" style="text-align:center; margin-bottom:5vh; margin-top:3vh;">Predict HDB Price</h1>
         <form method="POST" action="/hdbprediction">
             <div class="row">
                 <div class="col-md-4">
@@ -21,8 +21,6 @@
                 <div class="col-md-4">
                     {{ render_field(form.flat_type, class="form-control") }}
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-4">
                     {{ render_field(form.flat_model, class="form-control") }}
                 </div>
@@ -32,8 +30,6 @@
                 <div class="col-md-4">
                     {{ render_field(form.floor_area_sqm, class="form-control") }}
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-4">
                     {{ render_field(form.month, class="form-control") }}
                 </div>
@@ -43,8 +39,6 @@
                 <div class="col-md-4">
                     {{ render_field(form.lease_commence_date, class="form-control") }}
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-6">
                     {{ render_field(form.cbd_dist, class="form-control") }}
                 </div>
@@ -52,7 +46,7 @@
                     {{ render_field(form.min_dist_mrt, class="form-control") }}
                 </div>
             </div>
-            <input type="submit" value="Submit" class="btn btn-primary"/>
+            <input type="submit" value="Submit" class="btn btn-primary" style="margin-top:3vh; width:100%;"/>
         </form>
         <div class="result">
                 <h3>Results:</h3>

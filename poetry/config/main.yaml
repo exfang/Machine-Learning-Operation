@@ -3,8 +3,25 @@ hydra:
   run:
     dir: .
 
+hdb:
+  cleaning:
+    columns_to_drop: ['block', 'street_name', 'latitude', 'longitude']
+    categorical_features: ['town','postal_code', 'Year', 'Month', 'flat_type', 'storey_range', 'flat_model', 'lease_commence_date']
+    numeric_features: ['floor_area_sqm', 'cbd_dist', 'min_dist_mrt']
+  clean_data_location: data/cleaned/hdb_cleaned.csv
+  trained_model: config/model/gb
+
+medical:
+  cleaning:
+    columns_to_drop: ['resting_ECG', 'fasting_BS', 'exercise_angina', 'gender']
+    bin_column: ['age']
+    categorical_features: ['chest_pain', 'ST_slope']
+    numeric_features: ['cholesterol', 'max_HR', 'old_peak']
+  clean_data_location: data/cleaned/medical_cleaned.csv
+  trained_model: config/model/rf
+
 model:
-  medical: config/model/rf_model
+  medical: config/model/rf
   hdb: config/model/gb
 
 data:
@@ -15,5 +32,3 @@ data:
 prediction:
   medical_column: ['age', 'chest_pain', 'resting_BP', 'cholesterol', 'max_HR', 'old_peak', 'ST_slope']
   hdb_column: ['town', 'postal_code', 'Month', 'Year',  'flat_type', 'storey_range', 'floor_area_sqm', 'flat_model', 'lease_commence_date','cbd_dist', 'min_dist_mrt']
-  # processed: data/processed/processed.csv
-  # final: data/final/final.csv
