@@ -21,7 +21,7 @@ medical:
   trained_model: config/model/rf
 
 model:
-  medical: config/model/rf
+  medical: config/model/rf_model
   hdb: config/model/gb
 
 data:
