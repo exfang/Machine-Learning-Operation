@@ -5,7 +5,7 @@ description = ""
 authors = ["andrew"]
 
 [tool.poetry.dependencies]
-python = ">=3.8.2,<3.11"
+python = ">=3.8.2,<3.12"
 dvc = "^2.10.0"
 hydra-core = "^1.1.1"
 pdoc3 = "^0.10.0"
