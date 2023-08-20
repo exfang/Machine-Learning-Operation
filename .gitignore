@@ -14,4 +14,4 @@ poetry/pythonFiles/__pycache__/forms.cpython-38.pyc
 poetry/mlruns/
 .idea/
 *.log
-venv2/
+venv38/
