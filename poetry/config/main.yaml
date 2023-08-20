@@ -18,7 +18,7 @@ medical:
     categorical_features: ['chest_pain', 'ST_slope']
     numeric_features: ['cholesterol', 'max_HR', 'old_peak']
   clean_data_location: data/cleaned/medical_cleaned.csv
-  trained_model: config/model/rf
+  trained_model: config/model/rf_model
 
 model:
   medical: config/model/rf
