@@ -8,15 +8,13 @@ import hydra
 from hydra import utils
 from omegaconf import DictConfig
 import os
-os.environ['SECRET_KEY'] = 'your_secret_key_here'
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_secret_key')
 
 
 
 @app.route('/')
 def home():
-    secret_key = os.environ.get('SECRET_KEY', 'default_secret_key')
     return render_template('home.html')
 
 @hydra.main(config_path="config", config_name="main")
