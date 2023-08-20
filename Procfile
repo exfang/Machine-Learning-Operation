@@ -1,1 +1,1 @@
-web: gunicorn poetry.wsgi:app
+web: gunicorn poetry.app:app
