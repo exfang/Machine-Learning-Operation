@@ -1,1 +1,1 @@
-web: gunicorn poetry.app:app
+web: gunicorn poetry.__init__:app
