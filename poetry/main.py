@@ -111,7 +111,7 @@ class Price(Form):
 
 
 @hydra.main(config_path="config", config_name="main.yaml")
-def run(config):
+def run_config(config):
     print(config.model)
     print(config.prediction)
     global rf_model
@@ -126,23 +126,22 @@ def run(config):
     hdb_model = load_model(current_path+config.model.hdb)
     hdb_cols = config.prediction.hdb_column
 
-
+run_config()
 @app.route('/')
 def home():
-    run()
+    run_config()
     return render_template('home.html')
 
 
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
-    
     cv_form = Medical(request.form)
     if request.method == 'POST' and cv_form.validate():
         list_features = [x for x in request.form.values()]
         final = np.array(list_features)
         print(final)
         print("Running run()")
-        run()
+        run_config()
         print("Ran run()")
         data_unseen = pd.DataFrame([final], columns=rf_cols)
         prediction = predict_model(rf_model, data=data_unseen, round=0)
@@ -158,7 +157,7 @@ def cv():
 
 @app.route('/hdbprediction', methods=['GET', 'POST'])
 def price():
-    run()
+    run_config()
     price_form = Price(request.form)
     if request.method == 'POST' and price_form.validate():
         list_features = [x for x in request.form.values()]
@@ -175,5 +174,5 @@ def price():
 
 
 if __name__ == '__main__':
-    run()
+    run_config()
     app.run(debug=True)
