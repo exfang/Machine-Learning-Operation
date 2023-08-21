@@ -11,9 +11,14 @@ Activate venv in administrator mode in command prompt
 C:/MLOPS Website>mlops/Scripts/activate
 (mlops)C:/MLOPS Website>
 ```
-## Run installer to have the same dependencies and libraries 
-Dependencies stored in requirements.txt file.
-File for downloading the requirements is download_requirements.py.
+## Change directory to the root dir
+Poetry is the root dir
 ```console
-(mlops)C:/MLOPS Website>python download_requirements.py
+(mlops)C:/MLOPS Website>cd poetry
 ```
+## Download the necessary dependencies
+```console
+(mlops)C:/MLOPS Website/poetry>poetry install
+```
+## Run the website locally
+Right-click the main.py and run the file in terminal
