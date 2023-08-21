@@ -140,8 +140,6 @@ def run_config(config):
 @app.route('/')
 def home():
     print("Running home ver5")
-
-    run_config()
     return render_template('home.html')
 
 
@@ -183,4 +181,5 @@ def price():
 
 
 if __name__ == '__main__':
+    run_config()
     app.run(debug=True)
