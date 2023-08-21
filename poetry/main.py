@@ -127,13 +127,11 @@ def run_config(config):
     print(rf_cols)
     hdb_model = load_model(current_path+config.model.hdb)
     hdb_cols = config.prediction.hdb_column
-    hydra.core.global_hydra.GlobalHydra.instance().clear()
 
 
 @app.route('/')
 def home():
     print("Running home")
-    run_config()
     return render_template('home.html')
 
 
