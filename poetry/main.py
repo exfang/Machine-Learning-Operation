@@ -112,6 +112,7 @@ class Price(Form):
 
 @hydra.main(config_path="config", config_name="main.yaml")
 def run_config(config):
+    print("file found")
     print(config.model)
     print(config.prediction)
     global rf_model
