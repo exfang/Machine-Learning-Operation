@@ -5,6 +5,7 @@ from pycaret.regression import *
 import numpy as np
 import pandas as pd
 import hydra
+from hydra.core.global_hydra import GlobalHydra
 
 app = Flask(__name__)
 
@@ -24,7 +25,7 @@ def run_config(config):
     hdb_model = load_model(config.model.hdb)
     hdb_cols = config.prediction.hdb_column
 
-run_config()
+
 class Medical(Form):
     age = IntegerField('Age', [validators.NumberRange(min=1, max=130), validators.DataRequired()])
     # gender = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female')], validators=[validators.DataRequired()])
@@ -167,5 +168,7 @@ def price():
 
 
 if __name__ == '__main__':
+    GlobalHydra.instance().clear()  # Clear the Hydra instance
+    run_config()
     app.run(debug=True)
     
