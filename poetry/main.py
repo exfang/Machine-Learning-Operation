@@ -129,11 +129,10 @@ def run_config(config):
     hdb_cols = config.prediction.hdb_column
 
 
-run_config()
-
 @app.route('/')
 def home():
     print(rf_model)
+    run_config()
     print("Running home ver2")
     return render_template('home.html')
 
