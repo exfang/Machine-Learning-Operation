@@ -127,7 +127,7 @@ def run(config):
     hdb_cols = config.prediction.hdb_column
 
 
-run()
+
 
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
@@ -167,4 +167,5 @@ def price():
 
 
 if __name__ == '__main__':
+    run()
     app.run(debug=True)
