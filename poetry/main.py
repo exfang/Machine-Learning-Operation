@@ -8,6 +8,9 @@ import hydra
 from hydra import utils
 from omegaconf import DictConfig
 import os
+from hydra.core.global_hydra import GlobalHydra
+
+GlobalHydra.instance().clear()
 
 app = Flask(__name__)
 
