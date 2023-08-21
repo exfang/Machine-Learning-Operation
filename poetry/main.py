@@ -115,26 +115,19 @@ class Price(Form):
 
 @hydra.main(config_path="config", config_name="main")
 def run_config(config):
-    # from hydra import compose, initialize
-    # from omegaconf import OmegaConf
-
-    # initialize(config_path="config", job_name="main")
-    # config = compose(config_name="main")
     print("file found")
     print(config.model)
     print(config.prediction)
     
-    global rf_model
-    global rf_cols
-    global hdb_model
-    global hdb_cols
-    current_path = utils.get_original_cwd() + "/"
-    rf_model = load_model(current_path+config.model.medical)
+    global rf_model, rf_cols, hdb_model, hdb_cols
+    # current_path = utils.get_original_cwd() + "/"
+    rf_model = load_model(config.model.medical)
     print(rf_model)
     rf_cols = config.prediction.medical_column
     print(rf_cols)
-    hdb_model = load_model(current_path+config.model.hdb)
+    hdb_model = load_model(config.model.hdb)
     hdb_cols = config.prediction.hdb_column
+    return(rf_model, rf_cols, hdb_model, hdb_cols)
 
 
 @app.route('/')
@@ -181,5 +174,6 @@ def price():
 
 
 if __name__ == '__main__':
+    GlobalHydra.instance().clear()
     run_config()
     app.run(debug=True)
