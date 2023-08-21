@@ -5,14 +5,26 @@ from pycaret.regression import *
 import numpy as np
 import pandas as pd
 import hydra
-from hydra import utils
-from omegaconf import DictConfig
-import os
 from hydra.core.global_hydra import GlobalHydra
 
-GlobalHydra.instance().clear()
-
 app = Flask(__name__)
+
+
+@hydra.main(config_path="config", config_name="main")
+def run_config(config):
+    print("file found!")
+    print(config.model)
+    print(config.prediction)
+    
+    global rf_model, rf_cols, hdb_model, hdb_cols
+    # current_path = utils.get_original_cwd() + "/"
+    rf_model = load_model(config.model.medical)
+    print(rf_model)
+    rf_cols = config.prediction.medical_column
+    print(rf_cols)
+    hdb_model = load_model(config.model.hdb)
+    hdb_cols = config.prediction.hdb_column
+    return(rf_model, rf_cols, hdb_model, hdb_cols)
 
 
 class Medical(Form):
@@ -113,30 +125,9 @@ class Price(Form):
     min_dist_mrt = DecimalField('Distance to nearest MRT', [validators.NumberRange(min=0), validators.DataRequired()])
 
 
-@hydra.main(config_path="config", config_name="main")
-def run_config(config):
-    print("file found")
-    print(config.model)
-    print(config.prediction)
-    
-    global rf_model, rf_cols, hdb_model, hdb_cols
-    # current_path = utils.get_original_cwd() + "/"
-    rf_model = load_model(config.model.medical)
-    print(rf_model)
-    rf_cols = config.prediction.medical_column
-    print(rf_cols)
-    hdb_model = load_model(config.model.hdb)
-    hdb_cols = config.prediction.hdb_column
-    return(rf_model, rf_cols, hdb_model, hdb_cols)
-
-
 @app.route('/')
 def home():
-    print("Running home ver5")
-    GlobalHydra.instance().clear()
-    yes = True
-    if yes:
-        run_config()
+    print("Running home ver6")
     return render_template('home.html')
 
 
@@ -178,4 +169,6 @@ def price():
 
 
 if __name__ == '__main__':
+    GlobalHydra.instance().clear()
+    run_config()
     app.run(debug=True)
