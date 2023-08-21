@@ -175,5 +175,7 @@ def price():
 
 if __name__ == '__main__':
     GlobalHydra.instance().clear()
-    run_config()
+    yes = True
+    if yes:
+        run_config()
     app.run(debug=True)
