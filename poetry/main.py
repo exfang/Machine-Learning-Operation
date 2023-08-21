@@ -110,12 +110,10 @@ class Price(Form):
     min_dist_mrt = DecimalField('Distance to nearest MRT', [validators.NumberRange(min=0), validators.DataRequired()])
 
 
-@app.route('/')
-def home():
-    return render_template('home.html')
-
-@hydra.main(config_path="config", config_name="main")
+@hydra.main(config_path="config", config_name="main.yaml")
 def run(config):
+    print(config.model)
+    print(config.prediction)
     global rf_model
     global rf_cols
     global hdb_model
@@ -129,17 +127,23 @@ def run(config):
     hdb_cols = config.prediction.hdb_column
 
 
+@app.route('/')
+def home():
+    run()
+    return render_template('home.html')
 
 
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
-    run()
+    
     cv_form = Medical(request.form)
     if request.method == 'POST' and cv_form.validate():
         list_features = [x for x in request.form.values()]
         final = np.array(list_features)
         print(final)
-        
+        print("Running run()")
+        run()
+        print("Ran run()")
         data_unseen = pd.DataFrame([final], columns=rf_cols)
         prediction = predict_model(rf_model, data=data_unseen, round=0)
         output_text = ""
