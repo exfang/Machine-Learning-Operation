@@ -131,8 +131,9 @@ def run_config(config):
 
 @app.route('/')
 def home():
-    
-    print("Running home ver2")
+    print("Running home ver3")
+
+    run_config()
     return render_template('home.html')
 
 
@@ -140,7 +141,7 @@ def home():
 def cv():
     cv_form = Medical(request.form)
     if request.method == 'POST' and cv_form.validate():
-        run_config()
+        
         list_features = [x for x in request.form.values()]
         final = np.array(list_features)
         print(final)
