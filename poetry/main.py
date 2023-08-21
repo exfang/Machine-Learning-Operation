@@ -127,7 +127,7 @@ class Price(Form):
 @app.route('/')
 def home():
     print("Running home ver6")
-
+    run_config()
     return render_template('home.html')
 
 
@@ -170,6 +170,6 @@ def price():
 
 if __name__ == '__main__':
     GlobalHydra.instance().clear()  # Clear the Hydra instance
-    run_config()
+    
     app.run(debug=True)
     
