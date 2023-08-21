@@ -134,7 +134,7 @@ run_config()
 @app.route('/')
 def home():
     print(rf_model)
-    print("Running home")
+    print("Running home ver2")
     return render_template('home.html')
 
 
