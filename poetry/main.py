@@ -113,13 +113,13 @@ class Price(Form):
     min_dist_mrt = DecimalField('Distance to nearest MRT', [validators.NumberRange(min=0), validators.DataRequired()])
 
 
-# @hydra.main(config_path="config", config_name="main")
-def run_config():
-    from hydra import compose, initialize
-    from omegaconf import OmegaConf
+@hydra.main(config_path="config", config_name="main")
+def run_config(config):
+    # from hydra import compose, initialize
+    # from omegaconf import OmegaConf
 
-    initialize(config_path="config", job_name="main")
-    config = compose(config_name="main")
+    # initialize(config_path="config", job_name="main")
+    # config = compose(config_name="main")
     print("file found")
     print(config.model)
     print(config.prediction)
