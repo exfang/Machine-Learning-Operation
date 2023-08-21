@@ -122,7 +122,9 @@ def run(config):
     global hdb_cols
     current_path = utils.get_original_cwd() + "/"
     rf_model = load_model(current_path+config.model.medical)
+    print(rf_model)
     rf_cols = config.prediction.medical_column
+    print(rf_cols)
     hdb_model = load_model(current_path+config.model.hdb)
     hdb_cols = config.prediction.hdb_column
 
@@ -131,6 +133,7 @@ def run(config):
 
 @app.route('/cvprediction', methods=['GET', 'POST'])
 def cv():
+    run()
     cv_form = Medical(request.form)
     if request.method == 'POST' and cv_form.validate():
         list_features = [x for x in request.form.values()]
@@ -151,6 +154,7 @@ def cv():
 
 @app.route('/hdbprediction', methods=['GET', 'POST'])
 def price():
+    run()
     price_form = Price(request.form)
     if request.method == 'POST' and price_form.validate():
         list_features = [x for x in request.form.values()]
