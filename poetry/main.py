@@ -175,5 +175,4 @@ def price():
 
 
 if __name__ == '__main__':
-    run_config()
     app.run(debug=True)
