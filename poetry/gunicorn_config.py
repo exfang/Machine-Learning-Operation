@@ -16,8 +16,8 @@ class StandaloneApplication(WSGIApplication):
         return self.application
 
 if __name__ == '__main__':
-    import main
-    app = main.app
+    from main import app
+    app = app
     options = {
         'bind': '0.0.0.0:10000',
         'workers': 4,

@@ -5,7 +5,6 @@ from pycaret.regression import *
 import numpy as np
 import pandas as pd
 import hydra
-from hydra.core.global_hydra import GlobalHydra
 
 app = Flask(__name__)
 
@@ -169,6 +168,6 @@ def price():
 
 
 if __name__ == '__main__':
-    # GlobalHydra.instance().clear()
-    app.run(debug=True)
     run_config()
+    app.run(debug=True)
+    
