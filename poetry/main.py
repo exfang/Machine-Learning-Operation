@@ -23,9 +23,8 @@ def run_config(config):
     print(rf_cols)
     hdb_model = load_model(config.model.hdb)
     hdb_cols = config.prediction.hdb_column
-    return(rf_model, rf_cols, hdb_model, hdb_cols)
 
-
+run_config()
 class Medical(Form):
     age = IntegerField('Age', [validators.NumberRange(min=1, max=130), validators.DataRequired()])
     # gender = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female')], validators=[validators.DataRequired()])
@@ -168,6 +167,5 @@ def price():
 
 
 if __name__ == '__main__':
-    run_config()
     app.run(debug=True)
     
