@@ -133,6 +133,10 @@ def run_config(config):
 @app.route('/')
 def home():
     print("Running home ver5")
+    GlobalHydra.instance().clear()
+    yes = True
+    if yes:
+        run_config()
     return render_template('home.html')
 
 
@@ -174,8 +178,4 @@ def price():
 
 
 if __name__ == '__main__':
-    GlobalHydra.instance().clear()
-    yes = True
-    if yes:
-        run_config()
     app.run(debug=True)
