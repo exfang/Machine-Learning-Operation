@@ -124,9 +124,12 @@ class Price(Form):
     min_dist_mrt = DecimalField('Distance to nearest MRT', [validators.NumberRange(min=0), validators.DataRequired()])
 
 
+run_config()
+
 @app.route('/')
 def home():
     print("Running home ver6")
+
     return render_template('home.html')
 
 
@@ -169,6 +172,5 @@ def price():
 
 if __name__ == '__main__':
     GlobalHydra.instance().clear()  # Clear the Hydra instance
-    run_config()
     app.run(debug=True)
     
