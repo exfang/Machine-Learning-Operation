@@ -22,3 +22,6 @@ Poetry is the root dir
 ```
 ## Run the website locally
 Right-click the main.py and run the file in terminal
+
+Note:
+- If there is any error with the model, please rerun the pythonFiles > hdb/medical_model.py
