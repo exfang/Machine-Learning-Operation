@@ -2,7 +2,6 @@
 
 ## Project Deliverables
 - Website for users to interact with the models (HDB Pricing and Cardiovascular Prediction)
-- Deployed Website
 
 ## Setting up the Environment
 
