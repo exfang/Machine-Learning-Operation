@@ -1,7 +1,7 @@
 # Machine Learning Operation Project
 
 ## Project Deliverables
-- Website for users to interact with the models (HDB Pricing and Cardiovascular Prediction)
+- Website for users to interact with the models (HDB Pricing and Cardiovascular Prediction) developed using Pycaret.
 
 ## Setting up the Environment
 
